@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cooperativa AgroVale · Portal</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <div class="marca">Cooperativa AgroVale</div>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+      <a class="botao" href="#" id="link-blog">Comunicados</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Do campo ao silo, a safra de 340 famílias em boas mãos</h1>
+    <p>Armazenagem, classificação e comercialização de soja e milho no oeste do Paraná desde 1987.</p>
+  </section>
+
+  <section id="servicos" class="cards">
+    <article><h2>Armazenagem</h2><p>Quatro silos com monitoramento de temperatura e umidade durante todo o armazenamento.</p></article>
+    <article><h2>Classificação</h2><p>Laboratório próprio para umidade, impureza e grãos avariados, com laudo no mesmo dia.</p></article>
+    <article><h2>Assistência técnica</h2><p>Agrônomos que visitam a propriedade do plantio à colheita.</p></article>
+  </section>
+
+  <section id="contato" class="contato">
+    <h2>Fale com a gente</h2>
+    <p>Rodovia PR-182, km 14 · Toledo (PR) · atendimento ao cooperado de segunda a sábado.</p>
+  </section>
+
+  <footer>
+    <!-- EDITE AS DUAS LINHAS ABAIXO COM O SEU NOME E A SUA MATRÍCULA -->
+    <p>Infraestrutura: TechInova Serviços · Responsável técnico: <strong id="responsavel">SEU NOME AQUI</strong></p>
+    <p>Matrícula: <strong id="matricula">00000000</strong></p>
+  </footer>
+
+  <script>
+    // O link do blog aponta para a porta 9000 + os dois últimos dígitos da matrícula
+    const m = document.getElementById("matricula").textContent.trim();
+    const porta = 9000 + parseInt(m.slice(-2), 10);
+    document.getElementById("link-blog").href = "http://" + location.hostname + ":" + porta;
+  </script>
+</body>
+</html>
